@@ -7,12 +7,12 @@ var buttonStart;
 
 function preload()
 {
-	bgm = loadSound("https://ps20221041.github.io/p5jsTutorial4.2/sounds/johnny-english.mp3");
+	bgm = loadSound("https://ps20221041.github.io/p5jstutorial/p5jsTutorial4.2-master/sounds/johnny-english.mp3");
 
 	// load sound file into variable sfx1
-	sfx1 = loadSound("https://ps20221041.github.io/p5jsTutorial4.2/sounds/zapsplat_multimedia_game_sound_positive_action_tone_032_25091.mp3");
+	sfx1 = loadSound("https://ps20221041.github.io/p5jstutorial/p5jsTutorial4.2-master/zapsplat_multimedia_game_sound_positive_action_tone_032_25091.mp3");
 
-	buttonStart = loadImage("https://ps20221041.github.io/p5jsTutorial4.2/images/button_press-for-sfx.png");
+	buttonStart = loadImage("https://ps20221041.github.io/p5jstutorial/p5jsTutorial4.2-master/images/button_press-for-sfx.png");
 
 }
 
