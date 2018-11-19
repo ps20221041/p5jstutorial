@@ -26,6 +26,13 @@ function preload()
 	question1 = new Array(numberOfAnswers);
 	question2 = new Array(numberOfAnswers);
 	question3 = new Array(numberOfAnswers);
+	question4 = new Array(numberOfAnswers);
+	question5 = new Array(numberOfAnswers);
+	question6 = new Array(numberOfAnswers);
+	question7 = new Array(numberOfAnswers);
+	question8 = new Array(numberOfAnswers);
+	question9 = new Array(numberOfAnswers);
+	question10 = new Array(numberOfAnswers);
 
 	question1[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_747-100.jpg');
 	question1[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_747-300.jpg');
@@ -41,6 +48,21 @@ function preload()
 	question3[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_737-400.jpg');
 	question3[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_737-800.jpg');
 	question3[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_737-900.jpg');
+
+	question4[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_tu-154a.jpg');
+	question4[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_tu-154b.jpg');
+	question4[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_tu-154m.jpg');
+	question4[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_tu-154s.jpg');
+
+	question5[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_767-200.jpg');
+	question5[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_767-300.jpg');
+	question5[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_767-300F.jpg');
+	question5[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_767-400.jpg');
+
+	question6[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a340-200.jpg');
+	question6[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a340-300.jpg');
+	question6[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a340-500.jpg');
+	question6[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a340-600.jpg');
 
 }
 
