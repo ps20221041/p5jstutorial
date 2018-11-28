@@ -1,11 +1,26 @@
-var question1;
-var question2;
-var question3;
+var easyquestion1;
+var easyquestion2;
+var easyquestion3;
+var easyquestion4;
+var easyquestion5;
+var easyquestion6;
+var easyquestion7;
+var easyquestion8;
+var easyquestion9;
+var easyquestion10;
+
+var mediumquestion1;
+var mediumquestion2;
+var mediumquestion3;
+var mediumquestion4;
+var mediumquestion5;
+var mediumquestion6;
+
 var questionX;
 var questionY;
 var questionLength;
 var questionHeight;
-var health;
+var introImage;
 
 var canvasID;
 var locked;
@@ -16,62 +31,43 @@ function preload()
 {
 	// numberOfAnswers is how many multiple choice the player has
 	numberOfAnswers = 4;
-	questionLength = 126;
-	questionHeight = 40;
+	questionLength = 350;
+	questionHeight = 200;
 
-	questionX = [100,100,100,100,100];
-	questionY = [50,100,150,200,250];
+	questionX = [27,27+250+50,27,27+250+50];
+	questionY = [50,50,50+200+23,50+200+23];
 
 
-	question1 = new Array(numberOfAnswers);
-	question2 = new Array(numberOfAnswers);
-	question3 = new Array(numberOfAnswers);
-	question4 = new Array(numberOfAnswers);
-	question5 = new Array(numberOfAnswers);
-	question6 = new Array(numberOfAnswers);
-	question7 = new Array(numberOfAnswers);
-	question8 = new Array(numberOfAnswers);
-	question9 = new Array(numberOfAnswers);
-	question10 = new Array(numberOfAnswers);
+	introImage = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_other/intro.png');
 
-	question1[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_747-100.jpg');
-	question1[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_747-300.jpg');
-	question1[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_747-400.jpg');
-	question1[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_747-8.jpg');
+	easyquestion1 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/101.png');
+	easyquestion2 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/102.png');
+	easyquestion3 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/103.png');
+	easyquestion4 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/104.png');
+	easyquestion5 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/105.png');
+	easyquestion6 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/106.png');
+	easyquestion7 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/107.png');
+	easyquestion8 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/108.png');
+	easyquestion9 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/109.png');
+	easyquestion10 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/110.png');
 
-	question2[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a320-100.jpg');
-	question2[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a320-200.jpg');
-	question2[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a321.jpg');
-	question2[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a321neo.jpg');
+	mediumquestion1 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/201.png');
+	mediumquestion2 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/202.png');
+	mediumquestion3 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/203.png');
+	mediumquestion4 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/204.png');
+	mediumquestion5 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/205.png');
+	mediumquestion6 = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/backgrounds_easy/206.png');
 
-	question3[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_737-200.jpg');
-	question3[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_737-400.jpg');
-	question3[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_737-800.jpg');
-	question3[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_737-900.jpg');
 
-	question4[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_tu-154a.jpg');
-	question4[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_tu-154b.jpg');
-	question4[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_tu-154m.jpg');
-	question4[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_tu-154s.jpg');
-
-	question5[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_767-200.jpg');
-	question5[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_767-300.jpg');
-	question5[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_767-300F.jpg');
-	question5[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_767-400.jpg');
-
-	question6[1] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a340-200.jpg');
-	question6[2] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a340-300.jpg');
-	question6[3] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a340-500.jpg');
-	question6[4] = loadImage('https://ps20221041.github.io/p5jstutorial/aeroplane-game/images_hard/button_a340-600.jpg');
 
 }
 
 function setup()
 {
-	createCanvas(1000,800);
+	createCanvas(800,600);
 
-	health = 300;
-	canvasID = 0;
+	score = 0;
+	canvasID = 100;
 	locked = false;
 }
 
@@ -83,42 +79,121 @@ function draw()
 	{
 		gameOver();
 	}
-	else if (canvasID == 0)
+	else if (canvasID == 100)
 	{
-		showQuestions(question1);
-		isButtonClicked(0,1)
+		drawIntro();
 	}
-	else if (canvasID == 1)
+	else if (canvasID == 101)
 	{
-		showQuestions(question2);
-		isButtonClicked(0,2)
+		image(easyquestion1,0,0);
+
+//function isButtonClicked(correct,nextID)
+
+		isButtonClicked(1,102)
 	}
-	else if (canvasID == 2)
+	else if (canvasID == 102)
 	{
-		showQuestions(question3);
-		isButtonClicked(1,0)
+		image(easyquestion2,0,0);
+		isButtonClicked(1,103)
+	}
+	else if (canvasID == 103)
+	{
+		image(easyquestion3,0,0);
+		isButtonClicked(3,104)
+	}
+	else if (canvasID == 104)
+	{
+		image(easyquestion4,0,0);
+		isButtonClicked(2,105)
+	}
+	else if (canvasID == 105)
+	{
+		image(easyquestion5,0,0);
+		isButtonClicked(3,106)
+	}
+	else if (canvasID == 106)
+	{
+		image(easyquestion6,0,0);
+		isButtonClicked(2,107)
+	}
+	else if (canvasID == 107)
+	{
+		image(easyquestion7,0,0);
+		isButtonClicked(4,108)
+	}
+	else if (canvasID == 108)
+	{
+		image(easyquestion8,0,0);
+		isButtonClicked(1,109)
+	}
+	else if (canvasID == 109)
+	{
+		image(easyquestion9,0,0);
+		isButtonClicked(2,110)
+	}
+	else if (canvasID == 110)
+	{
+		image(easyquestion10,0,0);
+		isButtonClicked(3,100)
 	}
 
-	showHealth();
+	else if (canvasID == 201)
+	{
+		image(mediumquestion1,0,0);
+		isButtonClicked(3,202)
+	}
+	else if (canvasID == 202)
+	{
+		image(mediumquestion2,0,0);
+		isButtonClicked(3,203)
+	}
+	else if (canvasID == 203)
+	{
+		image(mediumquestion3,0,0);
+		isButtonClicked(1,204)
+	}
+	else if (canvasID == 204)
+	{
+		image(mediumquestion4,0,0);
+		isButtonClicked(4,205)
+	}
+	else if (canvasID == 205)
+	{
+		image(mediumquestion5,0,0);
+		isButtonClicked(2,206)
+	}
+	else if (canvasID == 206)
+	{
+		image(mediumquestion6,3,0);
+		isButtonClicked(2,207)
+	}
+
 
 }
 
-// shows your health bar and check if you are dead or not
-function showHealth()
+function drawIntro()
 {
-	fill(0,255,0);
-	rect(300,30,health,25);
-	fill(0,0,0);
-	text(health,300+10,30+20)
-	if (health <= 0)
+	image(introImage,0,0);
+	if (mouseX > 300 & mouseX < 500 && mouseY > 200 & mouseY < 300 && mouseIsPressed)
 	{
-		canvasID = -1;
+		canvasID = 101;
 	}
+	if (mouseX > 300 & mouseX < 500 && mouseY > 330 & mouseY < 430 && mouseIsPressed)
+	{
+		canvasID = 201;
+	}
+	if (mouseX > 300 & mouseX < 500 && mouseY > 460 & mouseY < 560 && mouseIsPressed)
+	{
+		canvasID = 301;
+	}
+
 }
+
 
 // checks what happens when you click on a button
 function isButtonClicked(correct,nextID)
 {
+	correct--;
 	var deductHealth = false;
 	if (mouseIsPressed && !locked)
 	{
@@ -140,7 +215,7 @@ function isButtonClicked(correct,nextID)
 		}
 		if (deductHealth)
 		{
-			health = health - 50;
+		//	health = health - 50;
 		}
 	}
 }
